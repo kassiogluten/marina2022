@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import { theme } from "../styles/theme";
 import { ContextProvider } from "../contexts/Context";
 

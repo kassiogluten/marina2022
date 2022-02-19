@@ -1,16 +1,33 @@
 import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
   fonts: {
-    heading: "Roboto",
-    body: "Roboto",
+    heading: "Raleway",
+    body: "Raleway",
     // heading: "CaviarDreams",
     // body: "CaviarDreams",
   },
   colors: {
-    rosaxoq: "#ff00ff",
+    laranja: "#FF4201",
+    amarelo: "#FFC903",
+    verde: "#8F9924",
+    rosa: "#F2034F",
+    bege: "#F2E0C7",
+    cinza: "#666666",
+    claro: {
+      laranja: "#FF541A",
+      amarelo: "#FFD436",
+      verde: "#ABC95E",
+      rosa: "#FA788A",
+    },
+    escuro: {
+      laranja: "#CC3600",
+      amarelo: "#E6B503",
+      verde: "#737A1C",
+      rosa: "#C20340",
+    },
   },
   components: {
     Button: {
@@ -18,7 +35,6 @@ export const theme = extendTheme({
         _hover: {
           // textDecoration: "underline",
         },
-        
       },
     },
   },
@@ -34,13 +50,13 @@ export const theme = extendTheme({
         },
       },
       body: {
-        /* bg: "var(--white)",
-        color: "var(--white)",
-        lineHeight: "inherit", */
+        bg: "bege",
+        // color: "var(--white)",
+        // lineHeight: "inherit",
       },
-      button:{
+      button: {
         _focus: { outlineColor: "#00000011" },
-      }
+      },
     },
   },
 });

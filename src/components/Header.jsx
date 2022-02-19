@@ -1,74 +1,52 @@
+import { Search2Icon } from "@chakra-ui/icons";
 import {
-  Box,
   Flex,
-  Heading,
   HStack,
-  IconButton,
   Text,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  Button,
   useDisclosure,
   useColorMode,
-  VStack,
+  Box,
 } from "@chakra-ui/react";
 
-import { FaMoon, FaSun, FaThList } from "react-icons/fa";
-import { FiMoon, FiSun } from "react-icons/fi";
+import {
+  RiFacebookBoxLine,
+  RiFacebookLine,
+  RiInstagramLine,
+  RiPinterestLine,
+} from "react-icons/ri";
+import { FiSearch } from "react-icons/fi";
+import { HiMenuAlt3 } from "react-icons/hi";
+
 import React from "react";
 import { LogoSvg } from "../icons";
+import { Icon } from "./Icon";
 
-export function Header() {
+export function Header({ logo }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Flex justify="center" align="center" w="100%" bg="#00000011" as="header">
+    <Flex justify="center" align="center" w="100%" as="header" bg="bege">
       <Flex
-        p="1rem"
+        p={{ base: "1rem", md: "3rem 1rem" }}
         w="full"
         align="center"
         maxW={1200}
         justify="space-between"
       >
-        <LogoSvg />
-        <HStack display={{ base: "none", sm: "flex" }} spacing={10}>
-          <Menu />
+        <HStack spacing={6}>
+          <RiFacebookLine />
+          <RiPinterestLine />
+          <RiInstagramLine />
         </HStack>
-        <IconButton
-          aria-label="Abrir menu de navegação"
-          onClick={onOpen}
-          display={{ base: "flex", sm: "none" }}
-        >
-          <FaThList />
-        </IconButton>
+        {logo && (
+          <Box display={{ base: "none", md: "flex" }}>
+            <Icon name="logo" />
+          </Box>
+        )}
+        <HStack spacing={6}>
+          <FiSearch />
+          <HiMenuAlt3 />
+        </HStack>
       </Flex>
-      <Drawer
-        autoFocus={false}
-        returnFocusOnClose={false}
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton m={3} />
-          <DrawerHeader>Menu</DrawerHeader>
-
-          <DrawerBody onClick={onClose}>
-            <VStack spacing={10}>
-              <Menu />
-            </VStack>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Botao1
-            </Button>
-            <Button colorScheme="blue">Botao2</Button>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
     </Flex>
   );
 }
@@ -77,9 +55,6 @@ function Menu() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <Button variant="ghost" onClick={toggleColorMode}>
-        {colorMode === "light" ? <FaMoon /> : <FaSun />}
-      </Button>
       <Text as="a" href="#">
         Link1
       </Text>
