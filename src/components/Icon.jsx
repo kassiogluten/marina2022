@@ -20,5 +20,11 @@ export function Icon({ name }) {
       return <Icone.FundoQuemSou />;
     case "LogoLetras":
       return <Icone.LogoLetras />;
+    case "TextoInstagram":
+      return <Icone.TextoInstagram />;
+    case "LogoLetrasVertical":
+      return <Icone.LogoLetrasVertical />;
+    case "FolhasInstagram":
+      return <Icone.FolhasInstagram />;
   }
 }

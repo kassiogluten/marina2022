@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { FollowMe } from "../components/FollowMe";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { CategoriaA } from "../components/home/CategoriaA";
@@ -28,6 +30,8 @@ export default function Home() {
       <QuemSou />
       <CategoriaA />
       <CategoriaB/>
+      <FollowMe/>
+      <Footer/>
     </>
   );
 }
