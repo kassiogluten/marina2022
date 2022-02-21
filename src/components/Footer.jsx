@@ -77,7 +77,7 @@ export function Footer() {
           justify="space-between"
           color="cinza"
           borderBottom="1px"
-          borderColor="cinza"
+          borderColor="#66666644"
           pb={6}
           gap={6}
         >
