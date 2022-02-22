@@ -8,6 +8,8 @@ export function Icon({ name }) {
       return <Icone.LogoRedonda />;
     case "efeitobubble1":
       return <Icone.EfeitoBubble1 />;
+    case "efeitobubble2":
+      return <Icone.EfeitoBubble2 />;
     case "BlogSvg":
       return <Icone.BlogSvg />;
     case "BlogData":

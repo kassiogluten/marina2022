@@ -607,6 +607,20 @@ export const FolhasInstagram = () => (
     />
   </svg>
 );
+export const EfeitoBubble2 = () => (
+  <svg
+    width="192"
+    height="233"
+    viewBox="0 0 192 233"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M32.2314 5.82962C-50.9586 22.8596 -171.729 85.5997 -190.649 219.66C-209.569 353.71 -24.5186 434.31 32.2314 314.24C88.9814 194.17 112.001 171.96 163.821 139.06C215.631 106.17 204.941 -29.5304 32.2314 5.82962Z"
+      fill="#909924"
+    />
+  </svg>
+);
 // export const LogoRedonda = () => (
 
 // );

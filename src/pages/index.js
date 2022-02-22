@@ -29,9 +29,9 @@ export default function Home() {
       <NovosConteudos />
       <QuemSou />
       <CategoriaA />
-      <CategoriaB/>
-      <FollowMe/>
-      <Footer/>
+      <CategoriaB />
+      <FollowMe />
+      <Footer />
     </>
   );
 }

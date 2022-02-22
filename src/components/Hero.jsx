@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Flex,
-  Heading,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import { Icon } from "./Icon";
 
@@ -48,10 +44,19 @@ export function Hero() {
         justify="center"
         align="center"
         w="100%"
+        pos="relative"
       >
-        <Flex pb="3rem" align="center" justify="center" maxW={1200} w="full">
+        <Flex pb="5rem" align="center" justify="center" maxW={1200} w="full">
           <RiMouseLine />
         </Flex>
+        <Box
+          display={{ base: "none", "2xl": "block" }}
+          pos="absolute"
+          bottom={-100}
+          right={0}
+        >
+          <Icon name="efeitobubble1" />
+        </Box>
       </Flex>
     </>
   );

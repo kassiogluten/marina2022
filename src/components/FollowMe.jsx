@@ -13,16 +13,19 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { Icon } from "./Icon";
+import Link from "next/link";
 
 export function FollowMe() {
   return (
     <Flex
+      as="a"
+      target="_blank"
+      href="https://www.instagram.com/marinarfernandes"
       bg="white"
-      as="section"
       justify="center"
       align="center"
       w="100%"
-      zIndex={2} 
+      zIndex={2}
       p={2}
     >
       <Flex
@@ -39,6 +42,8 @@ export function FollowMe() {
         h={{ xl: 250 }}
         pt={{ base: 8, xl: 0 }}
         gap={{ base: 14, xl: 6 }}
+        _hover={{ borderRadius: 50, bgColor: "escuro.rosa" }}
+        transition="500ms all ease"
       >
         <Box
           transform="translateY(14px)"

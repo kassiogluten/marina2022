@@ -260,6 +260,9 @@ export function NovosConteudos() {
             />
           </Box>
           <Button
+            as="a"
+            href="https://open.spotify.com/user/marinarfernandes?si=12MrkBCwSHOSRvA9EBlA3g"
+            target="_blank"
             pos="absolute"
             bottom={6}
             h={61}

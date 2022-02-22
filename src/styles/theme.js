@@ -50,6 +50,8 @@ export const theme = extendTheme({
         },
       },
       body: {
+        scrollBehavior:'smooth',
+        // overflowX: "hidden",
         bg: "bege",
         // color: "var(--white)",
         // lineHeight: "inherit",
