@@ -13,6 +13,7 @@ export function SocialLinks({color}) {
     <HStack spacing={0} color={color}>
       <IconButton
         variant="ghost"
+        _hover={{bg:'transparent', color:'laranja'}}
         as="a"
         href="https://www.facebook.com/Marinarfernandes"
         target="_blank"
@@ -21,6 +22,7 @@ export function SocialLinks({color}) {
       </IconButton>
       <IconButton
         variant="ghost"
+        _hover={{bg:'transparent', color:'laranja'}}
         as="a"
         href="https://br.pinterest.com/marinarfernande/_saved/"
         target="_blank"
@@ -29,6 +31,7 @@ export function SocialLinks({color}) {
       </IconButton>
       <IconButton
         variant="ghost"
+        _hover={{bg:'transparent', color:'laranja'}}
         as="a"
         href="https://www.instagram.com/marinarfernandes"
         target="_blank"

@@ -28,6 +28,7 @@ import { Icon } from "./Icon";
 import { motion, useCycle } from "framer-motion";
 import { useMyContext } from "../contexts/Context";
 import { SocialLinks } from "./SocialLinks";
+import { FooterLinks } from "./FooterLinks";
 
 export function Header({ logo }) {
   const { navigationMenu, setNavigationMenu } = useMyContext();
@@ -78,6 +79,7 @@ export function Header({ logo }) {
               as={IconButton}
               icon={<FiSearch />}
               variant="ghost"
+              _hover={{ bg: "transparent", color: "laranja" }}
               alignSelf="center"
               mr={2}
               onClick={cycle}
@@ -94,6 +96,7 @@ export function Header({ logo }) {
           <IconButton
             icon={<HiMenuAlt3 />}
             variant="ghost"
+            _hover={{ bg: "transparent", color: "laranja" }}
             alignSelf="center"
             mr={2}
             onClick={setNavigationMenu.toggle}
@@ -131,6 +134,7 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
         flexDir="column"
         fontWeight={500}
         fontSize={{ base: 24, md: 24 }}
+        color="cinza"
       >
         <CloseButton
           size="lg"
@@ -156,15 +160,9 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
         >
           Início
         </Heading>
-        <Text color="cinza" as="a" href="#">
-          Sobre mim
-        </Text>
-        <Text color="cinza" as="a" href="#">
-          Anuncie
-        </Text>
-        <Text color="cinza" as="a" href="#">
-          Contato
-        </Text>
+        <FooterLinks link="/sobre" name="Sobre mim" />
+        <FooterLinks link="/anuncie" name="Anuncie" />
+        <FooterLinks link="/contato" name="Contato" />
         <HStack mt={8} spacing={0}>
           <IconButton
             ml={-10}

@@ -1,29 +1,25 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Stack,
-  VStack,
-  HStack,
-  Center,
-  Button,
-  Wrap,
-} from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, Flex, Text, HStack, Button, Wrap } from "@chakra-ui/react";
 import { Icon } from "./Icon";
-import {
-  RiFacebookBoxLine,
-  RiFacebookLine,
-  RiInstagramLine,
-  RiPinterestLine,
-} from "react-icons/ri";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import { SocialLinks } from "./SocialLinks";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FooterLinks } from "./FooterLinks";
 
 export function Footer() {
+  const MotionHStack = motion(HStack);
+
+  const pulsa = {
+    hover: {
+      scale: [1, 1.25, 1, 1.15, 1],
+      transition: {
+        duration: 0.5,
+        repeat: Infinity,
+        repeatDelay: 0.5,
+      },
+    },
+  };
   return (
     <Flex
       overflow="hidden"
@@ -67,10 +63,12 @@ export function Footer() {
             fontWeight={600}
             color="black"
           >
-            <Text>Ínicio</Text>
-            <Text>Sobre mim</Text>
-            <Text>Anuncie</Text>
-            <Text>Contato</Text>
+
+          <FooterLinks link="/" name="Início"/>
+          <FooterLinks link="/sobre" name="Sobre mim"/>
+          <FooterLinks link="/anuncie" name="Anuncie"/>
+          <FooterLinks link="/contato" name="Contato"/>
+            
           </Wrap>
         </Flex>
         <Flex
@@ -92,6 +90,7 @@ export function Footer() {
             onClick={() => window.scrollTo(0, 0)}
             fontWeight={500}
             variant="ghost"
+            _hover={{ bg: "transparent", color: "laranja" }}
             leftIcon={<ArrowUpIcon boxSize={25} />}
           >
             Ir para o topo
@@ -110,20 +109,17 @@ export function Footer() {
           fontSize={14}
         >
           <Text>Marina Fernandes © 2022 - Todos direitos reservados.</Text>
-          <HStack
+          <MotionHStack
+            whileHover="hover"
             as="a"
             href="https://www.instagram.com/suricato.agencia/"
             target="_blank"
             spacing={1}
+            _hover={{ bg: "transparent", color: "laranja" }}
           >
             <Text>Feito com</Text>
             <motion.svg
-              whileHover={{ scale: [1, 1.25, 1, 1.15, 1] }}
-              transition={{
-                duration: 0.5,
-                repeat: Infinity,
-                repeatDelay: 0.5,
-              }}
+              variants={pulsa}
               width="26"
               height="26"
               viewBox="0 0 26 26"
@@ -139,7 +135,7 @@ export function Footer() {
             <Text>
               por <b>Suricato Agência.</b>
             </Text>
-          </HStack>
+          </MotionHStack>
         </Flex>
         <Box
           display={{ base: "none", "2xl": "block" }}
