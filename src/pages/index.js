@@ -2,7 +2,7 @@ import Head from "next/head";
 import { FollowMe } from "../components/FollowMe";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { Hero } from "../components/Hero";
+import { Hero } from "../components/home/Hero";
 import { CategoriaA } from "../components/home/CategoriaA";
 import { CategoriaB } from "../components/home/CategoriaB";
 import { NovosConteudos } from "../components/home/NovosConteudos";

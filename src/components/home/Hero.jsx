@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Heading, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import { Icon } from "./Icon";
+import { Icon } from "../Icon";
 
 import { RiMouseLine } from "react-icons/ri";
 

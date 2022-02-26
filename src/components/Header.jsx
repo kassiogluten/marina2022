@@ -64,7 +64,7 @@ export function Header({ logo }) {
             <Icon name="logo" />
           </Box>
         )}
-        <HStack justify="flex-end" maxW={400} w="full" spacing={6}>
+        <HStack justify="flex-end" maxW={400} spacing={6}>
           <MotionBox
             w={4}
             maxW={300}
