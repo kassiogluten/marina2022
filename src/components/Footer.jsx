@@ -67,7 +67,7 @@ export function Footer() {
           <FooterLinks link="/" name="Início"/>
           <FooterLinks link="/sobre" name="Sobre mim"/>
           <FooterLinks link="/anuncie" name="Anuncie"/>
-          <FooterLinks link="/contato" name="Contato"/>
+          {/* <FooterLinks link="/contato" name="Contato"/> */}
             
           </Wrap>
         </Flex>

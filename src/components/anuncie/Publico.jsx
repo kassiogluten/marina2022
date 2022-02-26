@@ -128,7 +128,7 @@ residem em Caratinga."
           <Heading pb={4} color="verde">
             Baixe meu Midia Kit completo
           </Heading>
-          <Button
+          <Button _hover={{bg:'laranja'}}
             colorScheme="blackAlpha"
             borderRadius={12}
             leftIcon={<FiDownloadCloud />}

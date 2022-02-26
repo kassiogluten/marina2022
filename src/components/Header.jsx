@@ -29,6 +29,7 @@ import { motion, useCycle } from "framer-motion";
 import { useMyContext } from "../contexts/Context";
 import { SocialLinks } from "./SocialLinks";
 import { FooterLinks } from "./FooterLinks";
+import Link from "next/link";
 
 export function Header({ logo }) {
   const { navigationMenu, setNavigationMenu } = useMyContext();
@@ -135,34 +136,33 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
         fontWeight={500}
         fontSize={{ base: 24, md: 24 }}
         color="cinza"
+        onClick={setNavigationMenu.toggle}
       >
-        <CloseButton
-          size="lg"
-          alignSelf="center"
-          color="laranja"
-          onClick={setNavigationMenu.toggle}
-        />
-        <Heading
-          fontSize={{ base: 24, md: 32 }}
-          fontWeight={500}
-          pos="relative"
-          _after={{
-            content: "''",
-            w: "20px",
-            h: "2px",
-            bgColor: "laranja",
-            pos: "absolute",
-            left: -8,
-            bottom: 2,
-          }}
-          mb={4}
-          color="verde"
-        >
-          Início
-        </Heading>
+        <CloseButton size="lg" alignSelf="center" color="laranja" />
+        <Link href="/" passHref>
+          <Heading
+            as="a"
+            fontSize={{ base: 24, md: 32 }}
+            fontWeight={500}
+            pos="relative"
+            _after={{
+              content: "''",
+              w: "20px",
+              h: "2px",
+              bgColor: "laranja",
+              pos: "absolute",
+              left: -8,
+              bottom: 2,
+            }}
+            mb={4}
+            color="verde"
+          >
+            Início
+          </Heading>
+        </Link>
         <FooterLinks link="/sobre" name="Sobre mim" />
         <FooterLinks link="/anuncie" name="Anuncie" />
-        <FooterLinks link="/contato" name="Contato" />
+        {/* <FooterLinks link="/contato" name="Contato" /> */}
         <HStack mt={8} spacing={0}>
           <IconButton
             ml={-10}
