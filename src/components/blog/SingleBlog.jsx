@@ -22,11 +22,14 @@ import { getPostsQuery } from "../../queries/getPostsQuery";
 import { graphCMSClient } from "../../lib/graphCMSClient";
 import Link from "next/link";
 
-export function Blog() {
+export function SingleBlog() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  const { query } = useRouter();
+  const router = useRouter();
+  const { slug } = router.query;
+
+  console.log("slug", slug);
 
   async function get() {
     try {
@@ -34,23 +37,26 @@ export function Blog() {
 
       const { post } = await graphCMSClient().request(
         `
-          post(where: {slug: "vamos-falar-de-estilo-estiloewbank"}) {
-            date
-            slug
-            title
-            tags
-            coverImage {
-              url
-            }
-            content {
-              html
-            }
-            id
+        {
+          post(where: {slug: "${slug}"}) {
+          date
+          slug
+          title
+          tags
+          coverImage {
+            url
           }
+          content {
+            html
+          }
+          id
+        }
+      }
             `
       );
 
       setData(post);
+      console.log("amount", amount);
     } catch (err) {
       console.log("erro:", err);
       return <Heading>Erro</Heading>;
@@ -58,10 +64,11 @@ export function Blog() {
       setLoading(false);
     }
   }
+  console.log("data", data);
 
   useEffect(() => {
     get();
-  }, [query]);
+  }, [slug]);
 
   // console.log(query)
 
@@ -97,7 +104,8 @@ export function Blog() {
           flexDir={{ base: "column", lg: "row" }}
           gap={6}
         >
-          <Heading>Teste</Heading>
+          <Heading>{data.title}</Heading>
+          <Box dangerouslySetInnerHTML={{ __html: data.content.html }} />
         </Flex>
       </Flex>
     );
