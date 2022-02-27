@@ -27,8 +27,6 @@ export function Blog() {
 
   const lastPage = pular + 16 > totalPosts;
 
-  console.log(pular);
-  console.log(lastPage);
 
   async function get() {
     setLoading(true);
@@ -105,6 +103,7 @@ export function Blog() {
             alt="Blog1"
             width={589}
             height={378}
+            objectFit="cover"
             src={data && data[0].coverImage.url}
             // src="/blog1.jpg"
           />

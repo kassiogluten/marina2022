@@ -170,31 +170,24 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
             variant="unstyled"
             as={ChevronDownIcon}
           />
-          <Heading
-            fontSize={{ base: 24, md: 32 }}
-            fontWeight={500}
-            pos="relative"
-            ml={8}
-            mb={4}
-            color="verde"
-          >
-            Conteúdos
-          </Heading>
+          <Link href="/blog" passHref>
+            <Heading
+              as="a"
+              fontSize={{ base: 24, md: 32 }}
+              fontWeight={500}
+              pos="relative"
+              mb={4}
+              color="verde"
+            >
+              Conteúdos
+            </Heading>
+          </Link>
         </HStack>
-        <Text color="cinza" as="a" href="#">
-          Mais recentes
-        </Text>
-        <Text color="cinza" as="a" href="#">
-          Moda
-        </Text>
-        <Text color="cinza" as="a" href="#">
-          Cuidados
-        </Text>
-        <HStack mt={8} spacing={6}>
-          <RiFacebookLine />
-          <RiPinterestLine />
-          <RiInstagramLine />
-        </HStack>
+        <FooterLinks link="/blog" name="Mais recentes" />
+        <FooterLinks link="/blog?conteudo=moda" name="Moda" />
+        <FooterLinks link="/blog?conteudo=cuidados" name="Cuidados" />
+
+        <Box pt={8}><SocialLinks/></Box>
       </Flex>
     </Slide>
   );
