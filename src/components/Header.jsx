@@ -184,8 +184,9 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
           </Link>
         </HStack>
         <FooterLinks link="/blog" name="Mais recentes" />
-        <FooterLinks link="/blog?conteudo=moda" name="Moda" />
-        <FooterLinks link="/blog?conteudo=cuidados" name="Cuidados" />
+        <FooterLinks link="/blog?conteudo=MODA" name="Moda" />
+        <FooterLinks link="/blog?conteudo=VIAGENS" name="Viagens" />
+        <FooterLinks link="/blog?conteudo=EVENTOS" name="Eventos" />
 
         <Box pt={8}><SocialLinks/></Box>
       </Flex>
