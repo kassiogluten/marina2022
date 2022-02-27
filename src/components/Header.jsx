@@ -37,7 +37,7 @@ export function Header({ logo }) {
   const MotionBox = motion(Box);
 
   const [animate, cycle] = useCycle(
-    { width: 16, borderColor: "transparent" },
+    { width: 16, borderColor: "#F2E0C7" },
     { width: "100%", borderColor: "#FF4201", color: "#FF4201" }
   );
 

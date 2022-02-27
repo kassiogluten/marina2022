@@ -16,7 +16,7 @@ import { Icon } from "../Icon";
 export function GostoDeConversar() {
   return (
     <Flex
-      borderTopEndRadius={112}
+      borderTopEndRadius={{base:75, md:112}}
       bg="white"
       as="section"
       justify="center"
@@ -24,14 +24,14 @@ export function GostoDeConversar() {
       w="100%"
     >
       <Flex
-        p="2rem 1rem 4rem"
+        p={{base:"1rem", md:"2rem 1rem 4rem"}}
         align="start"
         maxW={1000}
         w="full"
         justify="space-between"
         flexDir="column"
       >
-        <Heading pb={14} color="verde" fontSize={{ base: 24, md: 32 }} pt={100}>
+        <Heading pb={14} color="verde" fontSize={{ base: 24, md: 32 }} pt={{base:50,md:100}}>
           Gosto de conversar sobre...
         </Heading>
         <Wrap spacing={16} align="center" justify="space-between">

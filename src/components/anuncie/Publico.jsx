@@ -17,7 +17,7 @@ import { FiDownloadCloud } from "react-icons/fi";
 export function Publico() {
   return (
     <Flex
-      borderTopEndRadius={112}
+    borderTopEndRadius={{base:75, md:112}}
       bg="white"
       as="section"
       justify="center"
@@ -26,7 +26,7 @@ export function Publico() {
       flexDir="column"
     >
       <Flex
-        p="7rem 1rem 1rem"
+        p={{base:'3rem 1rem',md:"7rem 1rem 1rem"}}
         align="start"
         maxW={1000}
         w="full"
