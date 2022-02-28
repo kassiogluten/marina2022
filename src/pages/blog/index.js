@@ -6,7 +6,7 @@ import { GostoDeConversar } from "../../components/sobre/GostoDeConversar";
 import { Hero } from "../../components/blog/Hero";
 import { Blog } from "../../components/blog/Blog";
 
-export default function Sobre() {
+export default function BlogPage() {
   return (
     <>
       <Head>
