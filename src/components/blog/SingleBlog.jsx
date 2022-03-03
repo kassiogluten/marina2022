@@ -31,8 +31,8 @@ import Link from "next/link";
 export function SingleBlog() {
   const router = useRouter();
   const { hasCopied, onCopy } = useClipboard(
-    window.location.href
-    // "https://blog.marinafernandes.com.br" + router.asPath
+    // window.location.href
+    "https://blog.marinafernandes.com.br" + router.asPath
   );
 
   const [loading, setLoading] = useState(true);
@@ -168,12 +168,14 @@ export function SingleBlog() {
           <VStack textAlign="start" w="full" align="start">
             <Text>Compartilhe esse post com outras pessoas</Text>
             <Stack justify="start" direction="row" spacing={{ base: 2, lg: 4 }}>
-              <IconButton as="a"
+              <IconButton
+                as="a"
                 w={50}
                 colorScheme={"whatsapp"}
                 icon={<FaWhatsapp size={20} />}
                 href={
-                  "whatsapp://send?text=" + window.location.href
+                  "whatsapp://send?text=https://blog.marinafernandes.com.br" +
+                  router.asPath
                 }
               />
               <Button
