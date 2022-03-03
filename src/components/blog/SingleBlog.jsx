@@ -14,9 +14,14 @@ import {
   Spacer,
   Spinner,
   calc,
+  useClipboard,
+  IconButton,
 } from "@chakra-ui/react";
 import { Icon } from "../Icon";
 import Image from "next/image";
+
+import { FiLink } from "react-icons/fi";
+import { FaCheck, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 import { useRouter } from "next/router";
 import { getPostsQuery } from "../../queries/getPostsQuery";
@@ -24,12 +29,16 @@ import { graphCMSClient } from "../../lib/graphCMSClient";
 import Link from "next/link";
 
 export function SingleBlog() {
+  const router = useRouter();
+  const { hasCopied, onCopy } = useClipboard(
+    window.location.href
+    // "https://blog.marinafernandes.com.br" + router.asPath
+  );
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  const router = useRouter();
   const { slug } = router.query;
-
 
   async function get() {
     try {
@@ -75,7 +84,7 @@ export function SingleBlog() {
           year: "numeric",
         }),
         words: post.content.text.trim().split(/\s+/).length,
-        html: post.content.html
+        html: post.content.html,
       };
 
       setData(formatedPost);
@@ -115,7 +124,7 @@ export function SingleBlog() {
         align="center"
         w="100%"
         flexDir="column"
-        mt={{ base: 100, md: 200 }}
+        mt={{ base: 125, md: 200 }}
       >
         <Flex
           p="5rem 1rem 1rem"
@@ -125,10 +134,11 @@ export function SingleBlog() {
           justify="space-between"
           flexDir="column"
           gap={6}
-          transform={{ base: "translateY(-150px)", md: "translateY(-250px)" }}
+          mt={{ base: "-150px", md: "-250px" }}
+          // transform={{ base: "translateY(-150px)", md: "translateY(-250px)" }}
         >
           <Box overflow="hidden" borderRadius={32}>
-            <Image 
+            <Image
               alt={data.title}
               src={data.img}
               width={1000}
@@ -151,7 +161,33 @@ export function SingleBlog() {
               </Text>
             </HStack>
           </Wrap>
-          <Box dangerouslySetInnerHTML={{ __html: data.html }} />
+          <Box
+            sx={{ p: { py: 2 } }}
+            dangerouslySetInnerHTML={{ __html: data.html }}
+          />
+          <VStack textAlign="start" w="full" align="start">
+            <Text>Compartilhe esse post com outras pessoas</Text>
+            <Stack justify="start" direction="row" spacing={{ base: 2, lg: 4 }}>
+              <IconButton as="a"
+                w={50}
+                colorScheme={"whatsapp"}
+                icon={<FaWhatsapp size={20} />}
+                href={
+                  "whatsapp://send?text=" + window.location.href
+                }
+              />
+              <Button
+                minW={50}
+                colorScheme="blackAlpha"
+                bg="rosa"
+                color="white"
+                // leftIcon={hasCopied ? <FaCheck /> : <FiLink />}
+                onClick={onCopy}
+              >
+                {hasCopied ? "Link copiado" : <FiLink />}
+              </Button>
+            </Stack>
+          </VStack>
         </Flex>
       </Flex>
     );

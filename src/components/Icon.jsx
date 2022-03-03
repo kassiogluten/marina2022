@@ -62,5 +62,7 @@ export function Icon({ name }) {
       return <Icone.DiversificadoSvg />;
     case "QualidadeSvg":
       return <Icone.QualidadeSvg />;
+    case "EfeitoBubble5":
+      return <Icone.EfeitoBubble5 />;
   }
 }

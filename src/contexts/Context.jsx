@@ -1,10 +1,11 @@
-import { useBoolean } from "@chakra-ui/react";
+import { useBoolean, useDisclosure } from "@chakra-ui/react";
 import { createContext, useContext, useState } from "react";
 const Context = createContext();
 
 export function ContextProvider({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [navigationMenu, setNavigationMenu] = useBoolean();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Context.Provider
@@ -13,6 +14,9 @@ export function ContextProvider({ children }) {
         setIsModalOpen,
         navigationMenu,
         setNavigationMenu,
+        isOpen,
+        onOpen,
+        onClose,
       }}
     >
       {children}

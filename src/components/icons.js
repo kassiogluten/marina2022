@@ -1185,6 +1185,20 @@ export const QualidadeSvg = () => (
     />
   </svg>
 );
+export const EfeitoBubble5 = () => (
+  <svg
+    width="244"
+    height="373"
+    viewBox="0 0 244 373"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M121.57 0C54.4301 0 0 54.4301 0 121.57V251.34C0 318.48 54.4301 372.91 121.57 372.91C188.71 372.91 243.14 318.48 243.14 251.34V121.57C243.14 54.4301 188.71 0 121.57 0Z"
+      fill="#8F9924"
+    />
+  </svg>
+);
 // export const LogoRedonda = () => (
 
 // );

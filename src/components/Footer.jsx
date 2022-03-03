@@ -1,11 +1,29 @@
 import React from "react";
-import { Box, Flex, Text, HStack, Button, Wrap } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  HStack,
+  Button,
+  Wrap,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Heading,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { Icon } from "./Icon";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import { SocialLinks } from "./SocialLinks";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FooterLinks } from "./FooterLinks";
+import { FormContato } from "./FormContato";
+import { useMyContext } from "../contexts/Context";
 
 export function Footer() {
   const MotionHStack = motion(HStack);
@@ -20,6 +38,9 @@ export function Footer() {
       },
     },
   };
+
+  const { isOpen, onOpen, onClose } = useMyContext();
+
   return (
     <Flex
       overflow="hidden"
@@ -63,12 +84,28 @@ export function Footer() {
             fontWeight={600}
             color="black"
           >
-
-          <FooterLinks link="/" name="Início"/>
-          <FooterLinks link="/sobre" name="Sobre mim"/>
-          <FooterLinks link="/anuncie" name="Anuncie"/>
-          {/* <FooterLinks link="/contato" name="Contato"/> */}
-            
+            <FooterLinks link="/" name="Início" />
+            <FooterLinks link="/sobre" name="Sobre mim" />
+            <FooterLinks link="/anuncie" name="Anuncie" />
+            <Text
+              onClick={onOpen}
+              pos="relative"
+              _hover={{
+                cursor: "pointer",
+                _after: {
+                  content: "''",
+                  w: "12px",
+                  h: "2px",
+                  bgColor: "verde",
+                  pos: "absolute",
+                  left: -4,
+                  bottom: "6px",
+                },
+              }}
+            >
+              Contato
+            </Text>
+            {/* <FooterLinks link="/contato" name="Contato"/> */}
           </Wrap>
         </Flex>
         <Flex
@@ -146,7 +183,23 @@ export function Footer() {
         >
           <Icon name="efeitobubble2" />
         </Box>
+        <ModalContact isOpen={isOpen} onClose={onClose} />
       </Flex>
     </Flex>
   );
 }
+
+export const ModalContact = ({ isOpen, onClose }) => (
+  <Modal size="3xl" isOpen={isOpen} onClose={onClose}>
+    <ModalOverlay backdropFilter="blur(5px)" />
+    <ModalContent bg="rosa" borderRadius={{base:50, sm:80}} p={{ base: 6, sm: 75 }}>
+      <ModalCloseButton size="lg" bg="verde" color="white" top={-4} right={20} />
+      <ModalBody>
+        <Heading fontSize={40} color="bege">
+          Fale comigo
+        </Heading>
+        <FormContato />
+      </ModalBody>
+    </ModalContent>
+  </Modal>
+);

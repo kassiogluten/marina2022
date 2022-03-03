@@ -10,14 +10,26 @@ import {
   Center,
   Button,
   Wrap,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Icon as IconChakra,
+  InputRightElement,
 } from "@chakra-ui/react";
 import { Icon } from "../Icon";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud, FiMail } from "react-icons/fi";
 
 export function Publico() {
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <Flex
-    borderTopEndRadius={{base:75, md:112}}
+      borderTopEndRadius={{ base: 75, md: 112 }}
       bg="white"
       as="section"
       justify="center"
@@ -26,7 +38,7 @@ export function Publico() {
       flexDir="column"
     >
       <Flex
-        p={{base:'3rem 1rem',md:"7rem 1rem 1rem"}}
+        p={{ base: "3rem 1rem", md: "7rem 1rem 1rem" }}
         align="start"
         maxW={1000}
         w="full"
@@ -128,7 +140,9 @@ residem em Caratinga."
           <Heading pb={4} color="verde">
             Baixe meu Midia Kit completo
           </Heading>
-          <Button _hover={{bg:'laranja'}}
+          <Button
+            onClick={onOpen}
+            _hover={{ bg: "laranja" }}
             colorScheme="blackAlpha"
             borderRadius={12}
             leftIcon={<FiDownloadCloud />}
@@ -143,6 +157,7 @@ residem em Caratinga."
           </Button>
         </VStack>
       </Flex>
+      <ModalBaixe isOpen={isOpen} onClose={onClose} />
     </Flex>
   );
 }
@@ -153,4 +168,62 @@ const Item = ({ icon, title, desc }) => (
     <Heading fontSize={16}>{title}</Heading>
     <Text>{desc}</Text>
   </VStack>
+);
+
+const ModalBaixe = ({ isOpen, onClose }) => (
+  <Modal overflow="hidden"  size="3xl" isOpen={isOpen} onClose={onClose}>
+    <ModalOverlay backdropFilter="blur(5px)" />
+    <ModalContent
+      bg="rosa"
+      borderRadius={{ base: 50, sm: 80 }}
+      p={{ base: 6, sm: 75 }}
+      
+    >
+      <ModalCloseButton
+        size="lg"
+        bg="verde"
+        color="white"
+        top={-4}
+        right={20}
+      />
+      <ModalBody pos="relative">
+        <Heading fontSize={40} color="bege">
+          Receba meu Midia Kit em seu e-mail
+        </Heading>
+        <Stack maxW={450} pt={10} spacing={0} direction={{base:"column", sm:"row"}}>
+          <InputGroup>
+            <InputLeftElement py="26px" px="35px">
+              <IconChakra color="verde" boxSize={22} as={FiMail} />
+            </InputLeftElement>
+            <Input
+              bg="bege"
+              id="Email"
+              p="25px"
+              pl={61}
+              placeholder="Digite seu melhor e-mail ?"
+              type="email"
+            />
+          </InputGroup>
+          <Button
+            colorScheme="blackAlpha"
+            bg="verde"
+            color="bege"
+            h={50}
+            size="md"
+            w={{base:"full", sm:40}}
+          >
+            Enviar
+          </Button>
+        </Stack>
+        <Box
+          display={{ base: "none", lg: "flex" }}
+          pos="absolute"
+          bottom={-230}
+          right="-30%"
+        >
+          <Icon name="EfeitoBubble5" />
+        </Box>
+      </ModalBody>
+    </ModalContent>
+  </Modal>
 );

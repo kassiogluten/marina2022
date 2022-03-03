@@ -32,7 +32,7 @@ import { FooterLinks } from "./FooterLinks";
 import Link from "next/link";
 
 export function Header({ logo }) {
-  const { navigationMenu, setNavigationMenu } = useMyContext();
+  const { navigationMenu, setNavigationMenu, onOpen } = useMyContext();
 
   const MotionBox = motion(Box);
 
@@ -61,9 +61,11 @@ export function Header({ logo }) {
       >
         <SocialLinks />
         {logo && (
-          <Box display={{ base: "none", md: "flex" }}>
-            <Icon name="logo" />
-          </Box>
+          <Link href="/" passHref>
+            <Box as="a" display={{ base: "none", md: "flex" }}>
+              <Icon name="logo" />
+            </Box>
+          </Link>
         )}
         <HStack justify="flex-end" maxW={400} spacing={6}>
           <MotionBox
@@ -105,6 +107,7 @@ export function Header({ logo }) {
           <Menu
             setNavigationMenu={setNavigationMenu}
             navigationMenu={navigationMenu}
+            onOpen={onOpen}
           />
         </HStack>
       </Flex>
@@ -112,7 +115,7 @@ export function Header({ logo }) {
   );
 }
 
-export function Menu({ setNavigationMenu, navigationMenu }) {
+export function Menu({ setNavigationMenu, navigationMenu, onOpen }) {
   return (
     <Slide
       unmountOnExit
@@ -162,6 +165,24 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
         </Link>
         <FooterLinks link="/sobre" name="Sobre mim" />
         <FooterLinks link="/anuncie" name="Anuncie" />
+        <Text
+          onClick={onOpen}
+          pos="relative"
+          _hover={{
+            cursor: "pointer",
+            _after: {
+              content: "''",
+              w: "12px",
+              h: "2px",
+              bgColor: "verde",
+              pos: "absolute",
+              left: -4,
+              bottom: "6px",
+            },
+          }}
+        >
+          Contato
+        </Text>
         {/* <FooterLinks link="/contato" name="Contato" /> */}
         <HStack mt={8} spacing={0}>
           <IconButton
@@ -188,7 +209,9 @@ export function Menu({ setNavigationMenu, navigationMenu }) {
         <FooterLinks link="/blog?conteudo=VIAGENS" name="Viagens" />
         <FooterLinks link="/blog?conteudo=EVENTOS" name="Eventos" />
 
-        <Box pt={8}><SocialLinks/></Box>
+        <Box pt={8}>
+          <SocialLinks />
+        </Box>
       </Flex>
     </Slide>
   );
