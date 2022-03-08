@@ -15,7 +15,10 @@ import Image from "next/image";
 import { Icon } from "./Icon";
 import Link from "next/link";
 
+import { useMediaQuery } from "@chakra-ui/react";
+
 export function FollowMe() {
+  const [isLargerThan450] = useMediaQuery("(min-width: 450px)");
   return (
     <Flex
       as="a"
@@ -30,55 +33,32 @@ export function FollowMe() {
     >
       <Flex
         pos="relative"
-        transform="translateY(75px)"
         align="center"
+        justify="center"
         maxW={1200}
         w="full"
-        justify="space-evenly"
-        flexDir={{ base: "column-reverse", sm: "row" }}
-        borderRadius={40}
-        bg="rosa"
         zIndex={2}
+        transform="translateY(75px)"
         h={{ xl: 250 }}
-        pt={{ base: 8, xl: 0 }}
-        gap={{ base: 14, xl: 6 }}
-        _hover={{ borderRadius: 50, bgColor: "escuro.rosa" }}
-        transition="500ms all ease"
       >
-        <Box
-          transform="translateY(14px)"
-          width={306}
-          height={337}
-          alignSelf={{ xl: "end" }}
-          pos="relative"
-        >
+        {isLargerThan450 && (
           <Image
-            quality={90}
+            quality={100}
+            width={1414}
+            height={341}
+            src="/instagramWide.png"
             alt="Instagram Marina"
-            src="/cel-instagram.png"
-            layout="fill"
           />
-        </Box>
-        <Icon name="TextoInstagram" />
-        <Icon name="LogoLetrasVertical" />
-
-        {/* <Box
-          display={{ base: "none", xl: "flex" }}
-          zIndex={1}
-          pos="absolute"
-          left={-100}
-        >
-          <Icon name="FolhasInstagram" />
-        </Box>
-        <Box
-          display={{ base: "none", xl: "flex" }}
-          zIndex={1}
-          pos="absolute"
-          transform="scaleX(-1)"
-          right={-100}
-        >
-          <Icon name="FolhasInstagram" />
-        </Box> */}
+        )}
+        {!isLargerThan450 && (
+          <Image
+            quality={100}
+            width={350}
+            height={700}
+            src="/instagramMobile.png"
+            alt="Instagram Marina"
+          />
+        )}
       </Flex>
     </Flex>
   );

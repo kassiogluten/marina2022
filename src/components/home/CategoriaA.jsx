@@ -125,7 +125,7 @@ export function CategoriaA({ data }) {
                   </Text>
                 </HStack>
               </Wrap>
-              <Heading alignSelf="start" p={4} fontSize={{ base: 14, md: 18 }}>
+              <Heading alignSelf="start" px={4} fontSize={{ base: 14, md: 18 }}>
                 {item.title}
               </Heading>
             </VStack>

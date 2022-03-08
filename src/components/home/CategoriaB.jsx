@@ -127,7 +127,7 @@ export function CategoriaB({data}) {
                   </Wrap>
                   <Heading
                     alignSelf="start"
-                    p={4}
+                    px={4}
                     fontSize={{ base: 14, md: 18 }}
                   >
                     {item.title}

@@ -100,7 +100,7 @@ export function NovosConteudos({ data, loading }) {
                 h2: { color: "laranja" },
                 boxShadow: "0 0 50px #00000011",
               }}
-              spacing={6}
+              spacing={4}
               flex={1}
               sx={{ img: { borderRadius: 32 } }}
             >
@@ -112,7 +112,7 @@ export function NovosConteudos({ data, loading }) {
                 objectFit="cover"
                 // src="/blog1.jpg"
               />
-              <Wrap px={4} justify="start" spacing={1} w="full">
+              <Wrap px={4} justify="start" spacing={2} w="full">
                 {data &&
                   data[0].tags.map((tag) => (
                     <Badge
@@ -140,7 +140,7 @@ export function NovosConteudos({ data, loading }) {
                   </Text>
                 </HStack>
               </Wrap>
-              <Heading alignSelf="start" p={4} fontSize={{ base: 14, md: 18 }}>
+              <Heading px={4} alignSelf="start" fontSize={{ base: 14, md: 18 }}>
                 {data && data[0].title}
               </Heading>
             </VStack>
@@ -298,10 +298,7 @@ export function NovosConteudos({ data, loading }) {
             <Heading py={4} fontSize={{ base: 22, md: 24 }}>
               Siga-me no Spotify
             </Heading>
-            <Text pb={4}>
-              Ouça os conteúdos que consumo <br />
-              na plataforma.
-            </Text>
+            <Text pb={4}>Vem curtir uma música comigo.</Text>
             <Box width={270} height={280} pos="relative">
               <Image
                 layout="fill"

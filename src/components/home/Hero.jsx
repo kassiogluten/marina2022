@@ -8,9 +8,16 @@ import { RiMouseLine } from "react-icons/ri";
 export function Hero() {
   return (
     <>
-      <Flex bg="bege" as="section" justify="center" align="center" w="100%">
+      <Flex
+        pos="relative"
+        bg="bege"
+        as="section"
+        justify="center"
+        align="center"
+        w="100%"
+      >
         <Flex
-          p="2rem 1rem"
+          p="2rem 1rem 4rem"
           align="center"
           maxW={1200}
           w="full"
@@ -36,27 +43,43 @@ export function Hero() {
             height={565}
           />
         </Flex>
+        <Box
+          pos="absolute"
+          bottom={{
+            base: -200,
+            sm:-170,
+            md:-250,
+            lg: -200,
+            xl: -150,
+            "2xl": -200,
+          }}
+          right={{
+            base: "-70px",
+            lg: -6,
+            xl: -6,
+            "2xl": 0,
+          }}
+          transform={{
+            base: "scale(0.4)",
+            lg: "scale(0.8)",
+            xl: "scale(0.8)",
+            "2xl": "scale(1)",
+          }}
+        >
+          <Icon name="efeitobubble1" />
+        </Box>
       </Flex>
       <Flex
-        display={{ base: "none", md: "flex" }}
+        
         bg="bege"
         as="section"
         justify="center"
         align="center"
         w="100%"
-        pos="relative"
       >
-        <Flex pb="5rem" align="center" justify="center" maxW={1200} w="full">
+        <Flex display={{ base: "none", md: "flex" }} pb="5rem" align="center" justify="center" maxW={1200} w="full">
           <RiMouseLine />
         </Flex>
-        <Box
-          display={{ base: "none", "2xl": "block" }}
-          pos="absolute"
-          bottom={-100}
-          right={0}
-        >
-          <Icon name="efeitobubble1" />
-        </Box>
       </Flex>
     </>
   );
