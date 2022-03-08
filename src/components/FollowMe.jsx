@@ -10,8 +10,9 @@ import {
   Center,
   Button,
   Wrap,
+  Image,
 } from "@chakra-ui/react";
-import Image from "next/image";
+// import Image from "next/image";
 import { Icon } from "./Icon";
 import Link from "next/link";
 
@@ -19,6 +20,9 @@ import { useMediaQuery } from "@chakra-ui/react";
 
 export function FollowMe() {
   const [isLargerThan450] = useMediaQuery("(min-width: 450px)");
+  const instaImg = isLargerThan450
+    ? "/instagramWide.png"
+    : "/instagramMobile.png";
   return (
     <Flex
       as="a"
@@ -41,24 +45,14 @@ export function FollowMe() {
         transform="translateY(75px)"
         h={{ xl: 250 }}
       >
-        {isLargerThan450 && (
-          <Image
-            quality={100}
-            width={1414}
-            height={341}
-            src="/instagramWide.png"
-            alt="Instagram Marina"
-          />
-        )}
-        {!isLargerThan450 && (
-          <Image
-            quality={100}
-            width={350}
-            height={700}
-            src="/instagramMobile.png"
-            alt="Instagram Marina"
-          />
-        )}
+        <Image
+          width={{ base: 350, md: 1400 }}
+          height={{ base: 700, md: 341 }}
+          src={instaImg}
+          alt="Instagram Marina"
+        />
+        {/* maxW={1400}
+        height={341} */}
       </Flex>
     </Flex>
   );
