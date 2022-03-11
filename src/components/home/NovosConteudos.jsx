@@ -221,7 +221,7 @@ export function NovosConteudos({ data, loading }) {
           maxW={1200}
           w="full"
           justify="space-between"
-          flexDir={{ base: "column-reverse", lg: "row" }}
+          flexDir={{ base: "column", lg: "row" }}
           gap={6}
         >
           <Wrap justify="start" flexDir="column" spacing={6} flex={2}>
