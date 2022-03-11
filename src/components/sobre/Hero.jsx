@@ -8,13 +8,7 @@ import { RiMouseLine } from "react-icons/ri";
 export function Hero() {
   return (
     <>
-      <Flex
-        bg="bege"
-        as="section"
-        justify="center"
-        align="center"
-        w="100%"
-      >
+      <Flex bg="bege" as="section" justify="center" align="center" w="100%">
         <Flex
           p="2rem 1rem"
           align="center"
@@ -25,24 +19,29 @@ export function Hero() {
           //flexDir="column"
         >
           <VStack py={4} spacing={16} align="start">
-            <Heading maxW={280} color="verde" fontSize={{ base: 24, md: 32 }}>
-              moda,
-              <br /> estilo de vida,
-              <br /> viagens,
+            <Heading color="verde" fontSize={{ base: 24, md: 32 }}>
+              estilo de vida, moda,
+              <br /> maternidade,
+              <br /> viagem,
               <br /> bem-estar, <br />
-              atividade física,
-              <br /> comida saudável <br />e maternidade
             </Heading>
           </VStack>
           <Image
-            src="/Marina_Sobre.png"
+            src="/Marina_Pagina-Inicial.png"
             alt="Marina Fernandes"
-            width={810}
-            height={644}
+            width={667}
+            height={565}
           />
         </Flex>
       </Flex>
-      <Flex pos="relative" bg="bege" as="section" justify="center" align="center" w="100%">
+      <Flex
+        pos="relative"
+        bg="bege"
+        as="section"
+        justify="center"
+        align="center"
+        w="100%"
+      >
         <Flex
           p="4rem 1rem"
           align="start"
@@ -85,7 +84,7 @@ export function Hero() {
           display={{ base: "none", "2xl": "block" }}
           pos="absolute"
           bottom={-175}
-          left={0} 
+          left={0}
         >
           <Icon name="EfeitoBubble3" />
         </Box>

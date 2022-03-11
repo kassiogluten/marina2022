@@ -128,7 +128,7 @@ export function Menu({ setNavigationMenu, navigationMenu, onOpen }) {
         position="absolute"
         w="full"
         maxW={700}
-        gap={4}
+        gap={2}
         top={0}
         right={0}
         bg="white"
@@ -172,8 +172,8 @@ export function Menu({ setNavigationMenu, navigationMenu, onOpen }) {
             cursor: "pointer",
             _after: {
               content: "''",
-              w: "12px",
-              h: "2px",
+              w: "14px",
+              h: "3px",
               bgColor: "verde",
               pos: "absolute",
               left: -4,
@@ -205,8 +205,11 @@ export function Menu({ setNavigationMenu, navigationMenu, onOpen }) {
           </Link>
         </HStack>
         <FooterLinks link="/blog" name="Mais recentes" />
-        <FooterLinks link="/blog?conteudo=MODA" name="Moda" />
-        <FooterLinks link="/blog?conteudo=VIAGENS" name="Viagens" />
+        <FooterLinks color="verde" link="/blog?conteudo=ESTILO" name="Estilo" />
+        <FooterLinks color="laranja" link="/blog?conteudo=MODA" name="Moda" />
+        <FooterLinks color="amarelo" link="/blog?conteudo=MATERNIDADE" name="Maternidade" />
+        <FooterLinks color="rosa" link="/blog?conteudo=VIAGENS" name="Viagens" />
+        <FooterLinks color="bege" link="/blog?conteudo=BEMESTAR" name="Bem Estar" />
         <FooterLinks link="/blog?conteudo=EVENTOS" name="Eventos" />
 
         <Box pt={8}>

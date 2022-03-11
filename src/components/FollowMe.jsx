@@ -27,7 +27,7 @@ export function FollowMe() {
       w="100%"
     >
       <Flex
-       transform="translateY(90px)"
+        transform="translateY(90px)"
         as="a"
         target="_blank"
         href="https://www.instagram.com/marinarfernandes"
@@ -39,8 +39,7 @@ export function FollowMe() {
         mx="auto"
         zIndex={2}
         p={2}
-        px={{base:30, md:85}}
-        hoverflow="hidden"
+        px={{ base: 30, md: 85 }}
         background={{
           base: "url('/folhadireita.png') no-repeat 110% center,url('/folhaesquerda.png') no-repeat -10% center",
           md: "url('/folhadireita.png') no-repeat right center,url('/folhaesquerda.png') no-repeat left center",
@@ -48,7 +47,6 @@ export function FollowMe() {
       >
         <Flex
           pos="relative"
-          
           align="center"
           maxW={1200}
           w="full"
@@ -64,7 +62,7 @@ export function FollowMe() {
           transition="500ms all ease"
         >
           <Box
-            transform="translateY(14px)"
+            transform="translateY(13px)"
             width={306}
             height={337}
             alignSelf={{ xl: "end" }}
