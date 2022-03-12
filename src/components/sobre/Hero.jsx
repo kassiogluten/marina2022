@@ -42,44 +42,38 @@ export function Hero() {
         align="center"
         w="100%"
       >
-        <Flex
-          p="4rem 1rem"
-          align="start"
-          maxW={1000}
-          w="full"
-          justify="space-between"
-          flexDir="column"
-          gap={6}
-        >
-          <Icon name="SobreMim" />
-          <Text mt={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo vel
-            erat faucibus sed consectetur et molestie. Aliquet sed ultrices
-            viverra et, nibh. Bibendum iaculis tristique dignissim interdum
-            faucibus semper. Pulvinar tortor turpis facilisi malesuada in nulla
-            ac in sed. Laoreet metus, amet eget in maecenas consectetur egestas
-            vitae. Eu vitae facilisi arcu a eu. Massa tempus fringilla in mauris
-            ornare magna eget sagittis quis. Quam felis morbi molestie pulvinar
-            lorem dolor vitae.
-          </Text>
-          <Text>
-            Gravida pharetra, ut viverra velit orci urna facilisis aliquet. Urna
-            consequat, sed fermentum adipiscing. Dui, bibendum lectus vitae sed
-            lobortis ut. Pellentesque facilisi laoreet nam sit aenean enim id
-            ipsum. Volutpat dolor faucibus risus malesuada feugiat blandit
-            placerat elit. Pellentesque eleifend eu vitae ipsum turpis bibendum
-            dictum mi. Nunc purus sed eleifend purus urna quisque. Dui nulla
-            velit vulputate ultrices. Risus, magnis dui, quam quisque nisl. Elit
-            pellentesque nunc habitasse consectetur cursus. Fermentum neque,
-            aliquam quisque fusce accumsan massa facilisi.
-          </Text>
-          <Text>
-            Porttitor ipsum vestibulum gravida risus sit et morbi. Quis elit,
-            nibh quam nec vitae. Aliquet urna in non duis quis tortor. Leo ac
-            magna urna, cras laoreet lectus massa urna. Sed eget sit elit
-            eleifend.
-          </Text>
-        </Flex>
+       <VStack
+            sx={{ strong: { color: "laranja" } }}
+            p={8}
+            w="full"
+            maxW={900}
+            spacing={6}
+            align="center"
+          >
+            <Box pb={6} transform={{ base: "scale(0.7)", sm: "scale(1)" }}>
+              <Icon name="LogoLetras" />
+            </Box>
+            <Text>
+              Apaixonada por moda desde a infância, sou uma criadora de
+              conteúdo, formada em <strong>Design de Moda</strong>. Compartilho
+              com as minhas seguidoras, ou melhor dizer Seguinandes, assuntos
+              como moda, estilo de vida, bem-estar e mais recentemente sobre
+              maternidade e minha casa de praia em <strong>Trancoso/BA</strong>.
+            </Text>
+            <Text>
+              Eu acredito na quebra de padrões de beleza, na moda acessível e
+              sem censuras, cada qual da sua forma, mas todas com segurança,
+              autoestima e principalmente <strong>amor-próprio</strong>, porque
+              onde o amor entra as coisas tendem a dar certo!
+            </Text>
+            <Text>
+              Sou amante da natureza, colorida da cabeça aos pés. Uma menina
+              mulher solar, alto-astral e intensa. Minha motivação tem a ver com
+              deixar mulheres mais bonitas, mais versáteis, mais seguras, mais
+              bem sucedidas e também mais
+              <strong> LIVRES PRA SEREM ÚNICAS</strong>.
+            </Text>
+          </VStack>
         <Box
           display={{ base: "none", "2xl": "block" }}
           pos="absolute"

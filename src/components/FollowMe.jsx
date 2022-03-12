@@ -62,9 +62,9 @@ export function FollowMe() {
           transition="500ms all ease"
         >
           <Box
-            transform="translateY(13px)"
+            // transform="translateY(13px)"
             width={306}
-            height={337}
+            height={324}
             alignSelf={{ xl: "end" }}
             pos="relative"
             zIndex={99}
@@ -72,7 +72,7 @@ export function FollowMe() {
             <Image
               quality={90}
               alt="Instagram Marina"
-              src="/cel-instagram.png"
+              src="/cel-instagram2.png"
               layout="fill"
             />
           </Box>
