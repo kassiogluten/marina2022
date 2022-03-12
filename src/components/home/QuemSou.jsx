@@ -43,7 +43,7 @@ export function QuemSou() {
             transform={{ base: "translateX(-20px)", xl: "translateX(-100px)" }}
             align="center"
           >
-            <Image
+            <Image quality={90}
               width={491}
               height={515}
               src="/Marina_Quem-Sou.png"
@@ -79,7 +79,7 @@ export function QuemSou() {
               mulher solar, alto-astral e intensa. Minha motivação tem a ver com
               deixar mulheres mais bonitas, mais versáteis, mais seguras, mais
               bem sucedidas e também mais
-              <strong>LIVRES PRA SEREM ÚNICAS</strong>.
+              <strong> LIVRES PRA SEREM ÚNICAS</strong>.
             </Text>
           </VStack>
           <Box pos="absolute" bottom={0} right={-150}>

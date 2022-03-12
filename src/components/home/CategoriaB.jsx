@@ -66,7 +66,7 @@ export function CategoriaB({data}) {
       </Flex>
 
       <Flex
-          p="5rem 1rem 1rem"
+          p="1rem 1rem 5rem"
           align="center"
           maxW={1200}
           w="full"
@@ -127,7 +127,8 @@ export function CategoriaB({data}) {
                   </Wrap>
                   <Heading
                     alignSelf="start"
-                    px={4}
+                    p={4}
+                    pt={0}
                     fontSize={{ base: 14, md: 18 }}
                   >
                     {item.title}
@@ -136,7 +137,7 @@ export function CategoriaB({data}) {
               </Link>
             ))}
         </Flex>
-        <Flex
+        {/* <Flex
           mt="1rem"
           mb="3rem"
           p="1rem"
@@ -200,7 +201,7 @@ export function CategoriaB({data}) {
                 </Link>
               ))}
           </Wrap>
-        </Flex>
+        </Flex> */}
     </Flex>
   );
 }

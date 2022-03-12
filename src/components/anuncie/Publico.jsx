@@ -52,21 +52,21 @@ export function Publico() {
             Sobre meu público
           </Heading>
         </HStack>
+
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo vel erat
-          faucibus sed consectetur et molestie. Aliquet sed ultrices viverra et,
-          nibh. Bibendum iaculis tristique dignissim interdum faucibus semper.
-          Pulvinar tortor turpis facilisi malesuada in nulla ac in sed. Laoreet
-          metus, amet eget in maecenas consectetur egestas vitae.
+          Se você está recebendo esta proposta é porque nossas marcas se
+          conectam em valores, posicionamento e propósito. E no mercado de hoje,
+          não há nada mais estratégico do que somar as forças de duas marcas
+          para impactar um público alvo comum com autenticidade, verdade e
+          paixão; afinal, é ela que nos move.
         </Text>
         <Text>
-          Eu vitae facilisi arcu a eu. Massa tempus fringilla in mauris ornare
-          magna eget sagittis quis. Quam felis morbi molestie pulvinar lorem
-          dolor vitae. Gravida pharetra, ut viverra velit orci urna facilisis
-          aliquet. Urna consequat, sed fermentum adipiscing. Dui, bibendum
-          lectus vitae sed lobortis ut. Pellentesque facilisi laoreet nam sit
-          aenean enim id ipsum. Volutpat dolor faucibus risus malesuada feugiat
-          blandit placerat elit.
+          Moda, viagem, maternidade, autocuidado, saúde, bem estar, alimentação
+          saudável e atividade física fazem parte do meu universo de marca e sei
+          que, alguns deles também fazem parte do seu. Isso significa que
+          juntos, podemos inspiraram meninas mulheres a viverem a liberdade de
+          ser quem elas são! Minhas seguinandes vão amar essa parceria! Vamos
+          começar?
         </Text>
         <Wrap pt={10} justify="space-between">
           <Item
@@ -171,13 +171,12 @@ const Item = ({ icon, title, desc }) => (
 );
 
 const ModalBaixe = ({ isOpen, onClose }) => (
-  <Modal overflow="hidden"  size="3xl" isOpen={isOpen} onClose={onClose}>
+  <Modal overflow="hidden" size="3xl" isOpen={isOpen} onClose={onClose}>
     <ModalOverlay backdropFilter="blur(5px)" />
     <ModalContent
       bg="rosa"
       borderRadius={{ base: 50, sm: 80 }}
       p={{ base: 6, sm: 75 }}
-      
     >
       <ModalCloseButton
         size="lg"
@@ -190,7 +189,12 @@ const ModalBaixe = ({ isOpen, onClose }) => (
         <Heading fontSize={40} color="bege">
           Receba meu Midia Kit em seu e-mail
         </Heading>
-        <Stack maxW={450} pt={10} spacing={0} direction={{base:"column", sm:"row"}}>
+        <Stack
+          maxW={450}
+          pt={10}
+          spacing={0}
+          direction={{ base: "column", sm: "row" }}
+        >
           <InputGroup>
             <InputLeftElement py="26px" px="35px">
               <IconChakra color="verde" boxSize={22} as={FiMail} />
@@ -210,7 +214,7 @@ const ModalBaixe = ({ isOpen, onClose }) => (
             color="bege"
             h={50}
             size="md"
-            w={{base:"full", sm:40}}
+            w={{ base: "full", sm: 40 }}
           >
             Enviar
           </Button>

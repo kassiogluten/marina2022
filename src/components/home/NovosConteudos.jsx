@@ -140,7 +140,7 @@ export function NovosConteudos({ data, loading }) {
                   </Text>
                 </HStack>
               </Wrap>
-              <Heading px={4} alignSelf="start" fontSize={{ base: 14, md: 18 }}>
+              <Heading p={4} pt={0} alignSelf="start" fontSize={{ base: 14, md: 18 }}>
                 {data && data[0].title}
               </Heading>
             </VStack>
@@ -217,7 +217,7 @@ export function NovosConteudos({ data, loading }) {
           mt="1rem"
           mb="3rem"
           p="1rem"
-          align="center"
+          align="start"
           maxW={1200}
           w="full"
           justify="space-between"
@@ -226,7 +226,7 @@ export function NovosConteudos({ data, loading }) {
         >
           <Wrap justify="start" flexDir="column" spacing={6} flex={2}>
             {data.length > 3 &&
-              data.slice(4, 6).map((item, i) => (
+              data.slice(4, 5).map((item, i) => (
                 <Link href={`/blog/${item.slug}`} passHref key={item.id}>
                   <HStack
                     as="a"
@@ -300,7 +300,7 @@ export function NovosConteudos({ data, loading }) {
             </Heading>
             <Text pb={4}>Vem curtir uma música comigo.</Text>
             <Box width={270} height={280} pos="relative">
-              <Image
+              <Image unoptimized
                 layout="fill"
                 src="/marina-spotify.png"
                 alt="Marina Fernandes Spotify"

@@ -31,7 +31,7 @@ export function CategoriaA({ data }) {
     >
       <Flex
         px="1rem"
-        pt={{ base: 16, xl: "2rem" }}
+        p={{ base: 16, xl: "2rem" }}
         align="start"
         maxW={1200}
         w="full"
@@ -66,7 +66,7 @@ export function CategoriaA({ data }) {
       </Flex>
 
       <Flex
-        p="5rem 1rem 1rem"
+        p="1rem 1rem 5rem"
         align="center"
         maxW={1200}
         w="full"
@@ -125,7 +125,7 @@ export function CategoriaA({ data }) {
                   </Text>
                 </HStack>
               </Wrap>
-              <Heading alignSelf="start" px={4} fontSize={{ base: 14, md: 18 }}>
+              <Heading alignSelf="start" p={4} pt={0} fontSize={{ base: 14, md: 18 }}>
                 {item.title}
               </Heading>
             </VStack>
@@ -133,7 +133,7 @@ export function CategoriaA({ data }) {
         ))}
       </Flex>
 
-      <Flex
+      {/* <Flex
         mt="1rem"
         mb="3rem"
         p="1rem"
@@ -196,7 +196,7 @@ export function CategoriaA({ data }) {
             </Link>
           ))}
         </Wrap>
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 }

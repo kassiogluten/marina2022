@@ -36,7 +36,7 @@ export function Hero() {
               são.
             </Heading>
           </VStack>
-          <Image
+          <Image quality={90}
             src="/Marina_Pagina-Inicial.png"
             alt="Marina Fernandes"
             width={667}
