@@ -50,19 +50,16 @@ export function Hero() {
             sm:-170,
             md:-250,
             lg: -200,
-            xl: -150,
             "2xl": -200,
           }}
           right={{
             base: "-70px",
-            lg: -6,
-            xl: -6,
+            lg: "-47px",
             "2xl": 0,
           }}
           transform={{
             base: "scale(0.4)",
-            lg: "scale(0.8)",
-            xl: "scale(0.8)",
+            lg: "scale(0.6)",
             "2xl": "scale(1)",
           }}
         >

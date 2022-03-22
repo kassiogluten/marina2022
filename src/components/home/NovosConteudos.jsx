@@ -140,13 +140,18 @@ export function NovosConteudos({ data, loading }) {
                   </Text>
                 </HStack>
               </Wrap>
-              <Heading p={4} pt={0} alignSelf="start" fontSize={{ base: 14, md: 18 }}>
+              <Heading
+                p={4}
+                pt={0}
+                alignSelf="start"
+                fontSize={{ base: 14, md: 18 }}
+              >
                 {data && data[0].title}
               </Heading>
             </VStack>
           </Link>
           <VStack spacing={4} flex={1}>
-            {data.slice(1, 4).map((item, i) => (
+            {data.slice(1, 3).map((item, i) => (
               <Link href={`/blog/${item.slug}`} passHref key={item.id}>
                 <HStack
                   as="a"
@@ -165,7 +170,7 @@ export function NovosConteudos({ data, loading }) {
                     borderRadius={32}
                     minW={{ base: 150, md: 283 }}
                     w={{ base: 150, md: 283 }}
-                    h={145}
+                    h={{base:155, lg:170}}
                     pos="relative"
                     overflow="hidden"
                   >
@@ -217,16 +222,16 @@ export function NovosConteudos({ data, loading }) {
           mt="1rem"
           mb="3rem"
           p="1rem"
-          align="start"
+          align="center"
           maxW={1200}
           w="full"
           justify="space-between"
           flexDir={{ base: "column", lg: "row" }}
           gap={6}
         >
-          <Wrap justify="start" flexDir="column" spacing={6} flex={2}>
+          <Wrap justify="start" flexDir="column" spacing={6}>
             {data.length > 3 &&
-              data.slice(4, 5).map((item, i) => (
+              data.slice(3, 5).map((item, i) => (
                 <Link href={`/blog/${item.slug}`} passHref key={item.id}>
                   <HStack
                     as="a"
@@ -284,12 +289,13 @@ export function NovosConteudos({ data, loading }) {
             flex={1}
             p={6}
             borderRadius={32}
-            spacing={0}
+            spacing={-1}
             color="bege"
             bg="laranja"
             textAlign="center"
             pos="relative"
             overflow="hidden"
+            minW={330}
           >
             <Box pos="absolute" top={0} left={0}>
               <Icon name="FundoSpotify" />
@@ -299,10 +305,11 @@ export function NovosConteudos({ data, loading }) {
               Siga-me no Spotify
             </Heading>
             <Text pb={4}>Vem curtir uma música comigo.</Text>
-            <Box width={270} height={280} pos="relative">
-              <Image unoptimized
+            <Box width={200} height={210} pos="relative">
+              <Image
+                quality={100}
                 layout="fill"
-                src="/marina-spotify.png"
+                src="/marina-spotify2.png"
                 alt="Marina Fernandes Spotify"
               />
             </Box>
@@ -310,8 +317,7 @@ export function NovosConteudos({ data, loading }) {
               as="a"
               href="https://open.spotify.com/user/marinarfernandes?si=12MrkBCwSHOSRvA9EBlA3g"
               target="_blank"
-              pos="absolute"
-              bottom={6}
+              // pos="absolute"
               h={61}
               borderRadius={14}
               leftIcon={<RiSpotifyFill size={26} />}

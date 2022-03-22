@@ -36,34 +36,34 @@ export function GostoDeConversar() {
         </Heading>
         <Wrap spacing={16} align="center" justify="space-between">
           <Item
-            icon="CuidadosSvg"
-            title="Cuidados"
-            desc="Conteúdos sobre cuidados com a beleza feminina de forma leve."
-          />
-          <Item
             icon="ModaSvg"
             title="Moda"
-            desc="Conteúdos sobre cuidados com a beleza feminina de forma leve."
+            desc="Vamos desfilar personalidade? Aqui quem dita tendência é você. Compartilho uma moda descomplicada e usual para transmitir quem você é de verdade e o que tem de melhor."
           />
+            <Item
+              icon="GestacaoSvg"
+              title="MATERNIDADE"
+              desc="Em uma transformação diária, sou aprendiz no assunto e com a minha pouca experiência, compartilho os desafios e aprendizados com o meu filho Ravi. "
+            />
           <Item
+            icon="CuidadosSvg"
+            title="BEM ESTAR"
+            desc="Tudo o que faz sentido pra mim. Compartilho os resultados de tudo o que faço para buscar equilibro, tempo de qualidade e uma vida feliz. "
+          />
+          {/* <Item
             icon="ReceitasSvg"
             title="Receitas"
             desc="Conteúdos sobre cuidados com a beleza feminina de forma leve."
-          />
+          /> */}
           <Item
             icon="DiaDiaSvg"
-            title="Dia-a-dia e cotidiano"
-            desc="Conteúdos sobre cuidados com a beleza feminina de forma leve."
-          />
-          <Item
-            icon="GestacaoSvg"
-            title="Gestação e filhos"
-            desc="Conteúdos sobre cuidados com a beleza feminina de forma leve."
+            title="ESTILO DE VIDA"
+            desc="Leve e saudável! Topa? Compartilho meus treinos, procedimentos e hábitos."
           />
           <Item
             icon="ViagensSvg"
-            title="Viagens"
-            desc="Conteúdos sobre cuidados com a beleza feminina de forma leve."
+            title="VIAGEM"
+            desc="Cada parada uma história. Vamos por ai... "
           />
         </Wrap>
       </Flex>

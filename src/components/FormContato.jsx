@@ -49,7 +49,6 @@ export function FormContato() {
         status: "success",
         isClosable: true,
         position: "top",
-        duration: 0,
       });
 
       reset();
