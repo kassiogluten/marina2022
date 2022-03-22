@@ -8,7 +8,7 @@ export default async (req, res) => {
     const messageContent = `
         <div style="max-width:600px; font-size:16px; line-height:1.6;">
           <p>Download do Mídia Kit Marina Fernandes:<br/></p>
-          <a href="https://novo.marinafernandes.com.br/midiakit.pdf">https://novo.marinafernandes.com.br/midiakit.pdf</a>
+          <a href="https://drive.google.com/file/d/1zZXEXvPGhqedbdFMb9Tj_QdZzcPN6nu6/view?usp=sharing">https://drive.google.com/file/d/1zZXEXvPGhqedbdFMb9Tj_QdZzcPN6nu6/view?usp=sharing</a>
         </div>
       `;
 
