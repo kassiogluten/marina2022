@@ -84,8 +84,7 @@ residem em Caratinga."
           <Item
             icon="AssuntosSvg"
             title="Assuntos diversos"
-            desc="Como moda, viagens, bem-estar voltado para
- atividades físicas e alimentação saudável"
+            desc="Como moda, viagens, bem-estar, maternidade, estilo de vida"
           />
         </Wrap>
       </Flex>
@@ -107,11 +106,8 @@ residem em Caratinga."
         <Text>
           Desejo contribuir para que as mulheres, cada vez mais, se encham de
           si, se cuidem e desmistifiquem padrões de beleza social, vestindo o
-          que faz sentido para elas.
-        </Text>
-        <Text>
-          Faço isso de uma forma real, leve, natural e alegre, por meio de
-          compartilhamento de conteúdos.
+          que faz sentido para elas. Faço isso de uma forma real, leve, natural
+          e alegre, por meio de compartilhamento de conteúdos.
         </Text>
         <Text>
           Os valores por trás de cada post que faço e cada bandeira que levanto,
@@ -179,7 +175,7 @@ const ModalBaixe = ({ isOpen, onClose }) => {
         status: "success",
         isClosable: true,
         position: "top",
-        duration:50000
+        duration: 50000,
       });
 
       // reset();
