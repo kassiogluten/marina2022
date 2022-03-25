@@ -32,7 +32,7 @@ export function Hero() {
             </Heading>
           </VStack>
           <Box transform={{ base: "translateY(0)", md: "translateY(80px)" }}>
-            <Image src="/Anuncie.png" alt="Anuncie" width={440} height={373} />
+            <Image src="/Anuncie2.png" alt="Anuncie" width={440} height={373} />
           </Box>
         </Flex>
 
