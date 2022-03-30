@@ -33,7 +33,7 @@ export default function Home() {
           title: post.title,
           tags: post.tags,
           slug: post.slug,
-          img: post.coverImage.url,
+          img: post.coverImage?.url || "/favicon.png",
           shortDate: new Date(post.date).toLocaleDateString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             day: "2-digit",
@@ -62,7 +62,7 @@ export default function Home() {
           title: post.title,
           tags: post.tags,
           slug: post.slug,
-          img: post.coverImage.url,
+          img: post.coverImage?.url || "/favicon.png",
           shortDate: new Date(post.date).toLocaleDateString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             day: "2-digit",
@@ -91,7 +91,7 @@ export default function Home() {
           title: post.title,
           tags: post.tags,
           slug: post.slug,
-          img: post.coverImage.url,
+          img: post.coverImage?.url || "/favicon.png",
           shortDate: new Date(post.date).toLocaleDateString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             day: "2-digit",
@@ -107,8 +107,6 @@ export default function Home() {
           words: post.content.text.trim().split(/\s+/).length,
         };
       });
-      
-      
 
       setData(todosPosts);
       setDataModa(modaPosts);
@@ -119,8 +117,8 @@ export default function Home() {
       setLoading(false);
     }
   }
-  console.log('moda', dataModa);
-  console.log('viagens', dataViagens);
+  console.log("moda", dataModa);
+  console.log("viagens", dataViagens);
 
   useEffect(() => {
     get();
@@ -146,7 +144,7 @@ export default function Home() {
       <NovosConteudos data={data} />
       <QuemSou />
       <CategoriaA data={dataModa} />
-      <CategoriaB data={dataViagens}/>
+      <CategoriaB data={dataViagens} />
       <FollowMe />
       <Footer />
     </>
