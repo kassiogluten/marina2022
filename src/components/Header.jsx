@@ -205,11 +205,11 @@ export function Menu({ setNavigationMenu, navigationMenu, onOpen }) {
           </Link>
         </HStack>
         <FooterLinks link="/blog" name="Mais recentes" />
-        <FooterLinks color="verde" link="/blog?conteudo=ESTILO" name="Estilo de vida" />
+        <FooterLinks color="verde" link="/blog?conteudo=ESTILO DE VIDA" name="Estilo de vida" />
         <FooterLinks color="laranja" link="/blog?conteudo=MODA" name="Moda" />
         <FooterLinks color="amarelo" link="/blog?conteudo=MATERNIDADE" name="Maternidade" />
         <FooterLinks color="rosa" link="/blog?conteudo=VIAGENS" name="Viagens" />
-        <FooterLinks color="bege" link="/blog?conteudo=BEMESTAR" name="Bem Estar" />
+        <FooterLinks color="bege" link="/blog?conteudo=BEM ESTAR" name="Bem Estar" />
 
         <Box pt={8}>
           <SocialLinks />

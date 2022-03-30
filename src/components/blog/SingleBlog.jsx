@@ -70,7 +70,7 @@ export function SingleBlog() {
         title: post.title,
         tags: post.tags,
         slug: post.slug,
-        img: post.coverImage.url,
+        img: post.coverImage.url || '/favicon.png',
         shortDate: new Date(post.date).toLocaleDateString("pt-BR", {
           timeZone: "America/Sao_Paulo",
           day: "2-digit",
