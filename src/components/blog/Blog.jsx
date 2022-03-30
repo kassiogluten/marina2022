@@ -90,6 +90,9 @@ export function Blog() {
   useEffect(() => {
     get();
   }, [pular, query]);
+  useEffect(() => {
+    setPular(0)
+  }, [query]);
 
   // console.log(query)
 
