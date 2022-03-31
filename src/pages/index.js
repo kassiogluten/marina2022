@@ -15,7 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [dataModa, setDataModa] = useState([]);
-  const [dataViagens, setDataViagens] = useState([]);
+  const [dataMaternidade, setDataMaternidade] = useState([]);
 
   async function get() {
     try {
@@ -79,13 +79,13 @@ export default function Home() {
         };
       });
 
-      const viagens = await graphCMSClient().request(getPostsQuery, {
+      const maternidade = await graphCMSClient().request(getPostsQuery, {
         first: 6,
         skip: 0,
-        category: ["VIAGENS"],
+        category: ["MATERNIDADE"],
       });
 
-      const viagensPosts = viagens.posts.map((post) => {
+      const maternidadePosts = maternidade.posts.map((post) => {
         return {
           id: post.id,
           title: post.title,
@@ -110,7 +110,7 @@ export default function Home() {
 
       setData(todosPosts);
       setDataModa(modaPosts);
-      setDataViagens(viagensPosts);
+      setDataMaternidade(maternidadePosts);
     } catch (err) {
       console.log("erro:", err);
     } finally {
@@ -118,7 +118,7 @@ export default function Home() {
     }
   }
   console.log("moda", dataModa);
-  console.log("viagens", dataViagens);
+  console.log("maternidade", dataMaternidade);
 
   useEffect(() => {
     get();
@@ -144,7 +144,7 @@ export default function Home() {
       <NovosConteudos data={data} />
       <QuemSou />
       <CategoriaA data={dataModa} />
-      <CategoriaB data={dataViagens} />
+      <CategoriaB data={dataMaternidade} />
       <FollowMe />
       <Footer />
     </>

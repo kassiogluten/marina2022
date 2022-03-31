@@ -55,9 +55,9 @@ export function CategoriaB({data}) {
           fontWeight={800}
           fontSize={{ base: 24, md: 32 }}
         >
-          Viagens.
+          Maternidade.
         </Heading>
-        <Link href="/blog?conteudo=VIAGENS" passHref>
+        <Link href="/blog?conteudo=MATERNIDADE" passHref>
           <HStack as="a">
           <Icon name="BlogSvg" />
           <Text textDecoration="underline">Ver mais conteúdos</Text>
