@@ -32,7 +32,7 @@ export function SingleBlog() {
   const router = useRouter();
   const { hasCopied, onCopy } = useClipboard(
     // window.location.href
-    "https://blog.marinafernandes.com.br" + router.asPath
+    "https://novo.marinafernandes.com.br" + router.asPath
   );
 
   const [loading, setLoading] = useState(true);
@@ -174,7 +174,7 @@ export function SingleBlog() {
                 colorScheme={"whatsapp"}
                 icon={<FaWhatsapp size={20} />}
                 href={
-                  "whatsapp://send?text=https://blog.marinafernandes.com.br" +
+                  "whatsapp://send?text=https://novo.marinafernandes.com.br" +
                   router.asPath
                 }
               />
