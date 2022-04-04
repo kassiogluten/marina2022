@@ -111,10 +111,10 @@ export default function Home() {
       setData(todosPosts);
       setDataModa(modaPosts);
       setDataMaternidade(maternidadePosts);
+      setLoading(false);
     } catch (err) {
       console.log("erro:", err);
     } finally {
-      setLoading(false);
     }
   }
   console.log("moda", dataModa);
@@ -141,7 +141,7 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
-      <NovosConteudos data={data} />
+      <NovosConteudos data={data} loading={loading} />
       <QuemSou />
       <CategoriaA data={dataModa} />
       <CategoriaB data={dataMaternidade} />

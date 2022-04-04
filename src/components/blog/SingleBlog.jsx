@@ -127,9 +127,9 @@ export function SingleBlog() {
         mt={{ base: 125, md: 200 }}
       >
         <Flex
-          p="5rem 1rem 1rem"
+          p="5rem 2rem 1rem"
           align="start"
-          maxW={1200}
+          maxW={1000}
           w="full"
           justify="space-between"
           flexDir="column"
@@ -161,7 +161,7 @@ export function SingleBlog() {
               </Text>
             </HStack>
           </Wrap>
-          <Box
+          <Box 
             sx={{ p: { py: 2 } }}
             dangerouslySetInnerHTML={{ __html: data.html }}
           />
