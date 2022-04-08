@@ -117,8 +117,8 @@ export default function Home() {
     } finally {
     }
   }
-  console.log("moda", dataModa);
-  console.log("maternidade", dataMaternidade);
+  // console.log("moda", dataModa);
+  // console.log("maternidade", dataMaternidade);
 
   useEffect(() => {
     get();

@@ -207,7 +207,7 @@ export function NovosConteudos({ data, loading }) {
                       <HStack>
                         <Icon name="BlogTempo" />
                         <Text fontWeight={500} color="cinza" fontSize={13}>
-                          {Math.floor(item.words / 100)} min de leitura
+                          {Math.ceil(item.words / 100)} min de leitura
                         </Text>
                       </HStack>
                     </Wrap>
@@ -275,7 +275,7 @@ export function NovosConteudos({ data, loading }) {
                         <HStack>
                           <Icon name="BlogTempo" />
                           <Text fontWeight={500} color="cinza" fontSize={13}>
-                            {Math.floor(item.words / 100)} min de leitura
+                            {Math.ceil(item.words / 100)} min de leitura
                           </Text>
                         </HStack>
                       </Wrap>

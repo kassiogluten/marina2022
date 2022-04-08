@@ -121,7 +121,7 @@ export function CategoriaB({data}) {
                     <HStack>
                       <Icon name="BlogTempo" />
                       <Text fontWeight={500} color="cinza" fontSize={14}>
-                        {Math.floor(item.words / 100)} min de leitura
+                        {Math.ceil(item.words / 100)} min de leitura
                       </Text>
                     </HStack>
                   </Wrap>

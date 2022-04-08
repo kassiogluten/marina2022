@@ -174,7 +174,7 @@ export function Blog() {
                 <HStack>
                   <Icon name="BlogTempo" />
                   <Text fontWeight={500} color="cinza" fontSize={14}>
-                    {Math.floor(data && data[0].words / 100)} min de leitura
+                    {Math.ceil(data && data[0].words / 100)} min de leitura
                   </Text>
                 </HStack>
               </Wrap>
@@ -240,7 +240,7 @@ export function Blog() {
                       <HStack>
                         <Icon name="BlogTempo" />
                         <Text fontWeight={500} color="cinza" fontSize={13}>
-                          {Math.floor(item.words / 100)} min de leitura
+                          {Math.ceil(item.words / 100)} min de leitura
                         </Text>
                       </HStack>
                     </Wrap>
@@ -307,7 +307,7 @@ export function Blog() {
                         <HStack>
                           <Icon name="BlogTempo" />
                           <Text fontWeight={500} color="cinza" fontSize={13}>
-                            {Math.floor(item.words / 100)} min de leitura
+                            {Math.ceil(item.words / 100)} min de leitura
                           </Text>
                         </HStack>
                       </Wrap>
@@ -375,7 +375,7 @@ export function Blog() {
                     <HStack>
                       <Icon name="BlogTempo" />
                       <Text fontWeight={500} color="cinza" fontSize={14}>
-                        {Math.floor(item.words / 100)} min de leitura
+                        {Math.ceil(item.words / 100)} min de leitura
                       </Text>
                     </HStack>
                   </Wrap>
@@ -447,7 +447,7 @@ export function Blog() {
                       <HStack>
                         <Icon name="BlogTempo" />
                         <Text fontWeight={500} color="cinza" fontSize={13}>
-                          {Math.floor(item.words / 100)} min de leitura
+                          {Math.ceil(item.words / 100)} min de leitura
                         </Text>
                       </HStack>
                     </Wrap>

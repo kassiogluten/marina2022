@@ -23,15 +23,18 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Icon } from "./Icon";
 import { motion, useCycle } from "framer-motion";
 import { useMyContext } from "../contexts/Context";
 import { SocialLinks } from "./SocialLinks";
 import { FooterLinks } from "./FooterLinks";
 import Link from "next/link";
+import { SearchModal } from "./SearchModal";
 
 export function Header({ logo }) {
+  const [modalSearch, setModalSearch] = useState(false);
+
   const { navigationMenu, setNavigationMenu, onOpen } = useMyContext();
 
   const MotionBox = motion(Box);
@@ -40,6 +43,8 @@ export function Header({ logo }) {
     { width: 16, borderColor: "#F2E0C7" },
     { width: "100%", borderColor: "#FF4201", color: "#FF4201" }
   );
+
+  const busca = useRef();
 
   return (
     <Flex
@@ -88,13 +93,26 @@ export function Header({ logo }) {
               onClick={cycle}
             />
 
-            <Input
-              py={2}
-              _placeholder={{ color: "cinza" }}
-              variant="unstyled"
-              size="xs"
-              placeholder="Faça sua pesquisa"
-            />
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                // alert(busca.current.value);
+                if (busca.current.value.length < 3) {
+                  alert("A pesquisa precisa ter mais de 3 letras");
+                } else {
+                  setModalSearch(true);
+                }
+              }}
+            >
+              <Input
+                ref={busca}
+                py={2}
+                _placeholder={{ color: "cinza" }}
+                variant="unstyled"
+                size="xs"
+                placeholder="Faça sua pesquisa"
+              />
+            </form>
           </MotionBox>
           <IconButton
             icon={<HiMenuAlt3 />}
@@ -111,6 +129,11 @@ export function Header({ logo }) {
           />
         </HStack>
       </Flex>
+      <SearchModal
+        search={busca.current?.value || ""}
+        modalSearch={modalSearch}
+        setModalSearch={setModalSearch}
+      />
     </Flex>
   );
 }
@@ -205,11 +228,27 @@ export function Menu({ setNavigationMenu, navigationMenu, onOpen }) {
           </Link>
         </HStack>
         <FooterLinks link="/blog" name="Mais recentes" />
-        <FooterLinks color="verde" link="/blog?conteudo=ESTILO DE VIDA" name="Estilo de vida" />
+        <FooterLinks
+          color="verde"
+          link="/blog?conteudo=ESTILO DE VIDA"
+          name="Estilo de vida"
+        />
         <FooterLinks color="laranja" link="/blog?conteudo=MODA" name="Moda" />
-        <FooterLinks color="amarelo" link="/blog?conteudo=MATERNIDADE" name="Maternidade" />
-        <FooterLinks color="rosa" link="/blog?conteudo=VIAGENS" name="Viagens" />
-        <FooterLinks color="bege" link="/blog?conteudo=BEM ESTAR" name="Bem Estar" />
+        <FooterLinks
+          color="amarelo"
+          link="/blog?conteudo=MATERNIDADE"
+          name="Maternidade"
+        />
+        <FooterLinks
+          color="rosa"
+          link="/blog?conteudo=VIAGENS"
+          name="Viagens"
+        />
+        <FooterLinks
+          color="bege"
+          link="/blog?conteudo=BEM ESTAR"
+          name="Bem Estar"
+        />
 
         <Box pt={8}>
           <SocialLinks />
