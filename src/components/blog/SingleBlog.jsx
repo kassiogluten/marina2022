@@ -129,7 +129,7 @@ export function SingleBlog() {
         <Flex
           p="5rem 2rem 1rem"
           align="start"
-          maxW={1000}
+          maxW={900}
           w="full"
           justify="space-between"
           flexDir="column"

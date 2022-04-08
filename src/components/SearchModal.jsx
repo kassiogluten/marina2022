@@ -59,20 +59,22 @@ export function SearchModal({ modalSearch, setModalSearch, search }) {
   }
 
   useEffect(() => {
-    if (search.length > 3) get();
-  }, [modalSearch]);
+    if (search.length > 2) get();
+  }, [modalSearch, search]);
   console.log("search:", data);
 
   const Results = () => {
     return data.map((item) => (
-      <Link key={item.id} href={`/blog/${item.slug}`}>
-        <Button as="a">{item.title}</Button>
+      <Link key={item.id} href={`/blog/${item.slug}`} passHref>
+        <Button align="start" fontSize={12} onClick={() => setModalSearch(false)} maxW={350} as="a">
+          <Text noOfLines={2}>{item.title}</Text>
+        </Button>
       </Link>
     ));
   };
 
   return (
-    <Modal size="xl" isOpen={modalSearch} onClose={() => setModalSearch(false)}>
+    <Modal isOpen={modalSearch} onClose={() => setModalSearch(false)}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader fontWeight={400}>
