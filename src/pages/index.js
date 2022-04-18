@@ -34,13 +34,13 @@ export default function Home() {
           tags: post.tags,
           slug: post.slug,
           img: post.coverImage?.url || "/favicon.png",
-          shortDate: new Date(post.date).toLocaleDateString("pt-BR", {
+          shortDate: new Date(post.date + "T12:00").toLocaleDateString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             day: "2-digit",
             month: "2-digit",
             year: "2-digit",
           }),
-          longDate: new Date(post.date).toLocaleDateString("pt-BR", {
+          longDate: new Date(post.date + "T12:00").toLocaleDateString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             day: "2-digit",
             month: "long",
@@ -49,6 +49,9 @@ export default function Home() {
           words: post.content.text.trim().split(/\s+/).length,
         };
       });
+
+      console.log('todos', todos)
+      console.log('todosPosts', todosPosts)
 
       const moda = await graphCMSClient().request(getPostsQuery, {
         first: 6,
