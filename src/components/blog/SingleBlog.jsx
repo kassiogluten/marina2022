@@ -70,7 +70,7 @@ export function SingleBlog() {
         title: post.title,
         tags: post.tags,
         slug: post.slug,
-        img: post.coverImage.url || '/favicon.png',
+        img: post.coverImage.url || "/favicon.png",
         shortDate: new Date(post.date + "T12:00").toLocaleDateString("pt-BR", {
           timeZone: "America/Sao_Paulo",
           day: "2-digit",
@@ -84,7 +84,10 @@ export function SingleBlog() {
           year: "numeric",
         }),
         words: post.content.text.trim().split(/\s+/).length,
-        html: post.content.html,
+        html: post.content.html.replaceAll(
+          "https://marinafernandes.com.br/wp-content/uploads/",
+          "https://marinafernandes.s3.sa-east-1.amazonaws.com/wp-content/uploads/"
+        ),
       };
 
       setData(formatedPost);
@@ -161,7 +164,7 @@ export function SingleBlog() {
               </Text>
             </HStack>
           </Wrap>
-          <Box 
+          <Box
             sx={{ p: { py: 2 } }}
             dangerouslySetInnerHTML={{ __html: data.html }}
           />
