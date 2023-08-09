@@ -30,25 +30,29 @@ export function Hero() {
             <Heading
               maxW={{ base: 376, md: 487 }}
               color="laranja"
-              fontSize={{ base: 24, md: 32 }}
+              fontSize={{ base: 24, md: 30 }}
             >
               Inspirando meninas mulheres a viverem a liberdade de ser quem elas
               são.
             </Heading>
           </VStack>
-          <Image quality={90}
-            src="/Marina_Pagina-Inicial.png"
+          <Image
+            quality={95}
+            src="/Marina_Pagina-Inicial3.png"
             alt="Marina Fernandes"
-            width={667}
-            height={565}
+            width={800}
+            objectFit="contain"
+            // width={667}
+            height={800}
+            // height={565}
           />
         </Flex>
         <Box
           pos="absolute"
           bottom={{
             base: -200,
-            sm:-170,
-            md:-250,
+            sm: -170,
+            md: -250,
             lg: -200,
             "2xl": -200,
           }}
@@ -66,15 +70,15 @@ export function Hero() {
           <Icon name="efeitobubble1" />
         </Box>
       </Flex>
-      <Flex
-        
-        bg="bege"
-        as="section"
-        justify="center"
-        align="center"
-        w="100%"
-      >
-        <Flex display={{ base: "none", md: "flex" }} pb="5rem" align="center" justify="center" maxW={1200} w="full">
+      <Flex bg="bege" as="section" justify="center" align="center" w="100%">
+        <Flex
+          display={{ base: "none", md: "flex" }}
+          pb="5rem"
+          align="center"
+          justify="center"
+          maxW={1200}
+          w="full"
+        >
           <RiMouseLine />
         </Flex>
       </Flex>
