@@ -17,12 +17,14 @@ export function Hero() {
         w="100%"
       >
         <Flex
+          pos="relative"
           p="2rem 1rem 4rem"
           align="center"
           maxW={1200}
           w="full"
           justify="space-between"
           flexDir={{ base: "column", sm: "row" }}
+          // h="full"
           //flexDir="column"
         >
           <VStack spacing={16} align="start">
@@ -36,16 +38,33 @@ export function Hero() {
               são.
             </Heading>
           </VStack>
-          <Image
-            quality={95}
-            src="/Marina_Pagina-Inicial3.png"
-            alt="Marina Fernandes"
-            width={800}
-            objectFit="contain"
-            // width={667}
-            height={800}
-            // height={565}
-          />
+          <Box
+            pos="relative"
+            // h={{ base: "50vh", xl: "100vh" }}
+            w="full"
+            maxW="730px"
+            minH={"600px"}
+            maxH="700px"
+          >
+            <Image
+              quality={95}
+              src="/Marina_Pagina-Inicial3.png"
+              alt="Marina Fernandes"
+              // width={800}
+              objectFit="contain"
+              // width={667}
+              // height={800}
+              placeholder="blur"
+              layout="fill"
+              objectPosition="right"
+              blurDataURL="/Marina_Pagina-Inicial3.png"
+              // sizes="800px"
+              // sizes="(max-width: 767px) 80vw, (max-width: 1023px) 50vw, 33vw"
+              // style={{ maxHeight: "85vh", zIndex: 4 }}
+              // height={565}
+              className="hero-image"
+            />
+          </Box>
         </Flex>
         <Box
           pos="absolute"

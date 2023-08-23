@@ -55,14 +55,16 @@ export function Header({ logo }) {
       as="header"
       bg="bege"
       overflow="hidden"
+      zIndex={50}
     >
       <Flex
-        p={{ base: "1rem", md: "3rem 1rem" }}
+        p={{ base: "1rem", md: "2rem 1rem" }}
         w="full"
         align="center"
         maxW={1200}
         justify="space-between"
         pos="relative"
+        h={{ base: "inherit", md: 70 }}
       >
         <SocialLinks />
         {logo && (
